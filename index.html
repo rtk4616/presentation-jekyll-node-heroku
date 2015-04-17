@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>JEKYLL + NODEJS + HEROKU</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="How to make a static site behave dynamically">
+		<meta name="author" content="Tom Friedhof">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -41,335 +41,362 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
+					<h1>jekyll<br /> nodejs + heroku</h1>
+					<h3>Adding a small backend to a static site</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Presented by <a href="http://twitter.com/tomfriedhof ">Tom Friedhof</a> </small>
 					</p>
 				</section>
 
 				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
+				  <h1 style="text-align: left ">Tom Friedhof</h1>
+				  <div style="width: 25%; float: left;">
+				    <img src="/img/tom-friedhof.jpg" />
+				  </div>
+				  <div style="width: 75%; float: left;">
+  					<ul>
+  					 <li>Senior Software Engineer at <a href="http://activelamp.com">ActiveLAMP</a></li>
+  					 <li><a href="http://twitter.com/tomfriedhof">@tomfriedhof</a></li>
+  					 <li><a href="http://twitter.com/activelamp">@activelamp</a></li>
+  					</ul>
+				  </div>
+				</section>
+				
+				<section>
+				  <section>
+  				  <h2>What are we going to talk about?</h2>
+  				  <div>
+    					<ul>
+    					 <li>Briefly talk about jekyll.</li>
+    					 <li>Intro to Nodejs and Express.</li>
+    					 <li>Pushing your node app to the cloud automatically</li>
+    					</ul>
+  				  </div>
+  				</section>
+
+  				<section>
+  				  <h2>Stuff we're going to breeze past.</h2>
+  				  <div>
+    					<ul>
+    					  <li>HTML, CSS, JS, etc...</li>
+    					  <li>Git... and Github.</li>
+    					  <li>The mechanics of jekyll.</li>
+    					  <li>Templating with jade.</li>
+    					</ul>
+  				  </div>
+  				</section>
+  				
+  				<section>
+  				  <h2>If you're brand new to nodejs</h2>
+  				  <p>THIS PRESENTATION IS FOR YOU!</p>
+  				</section>
+				</section>
+				
+				
+				<section>
+				  <section data-background="/img/jekyll.png">
+  				  <h1 class="fragment" style="color: white">Not this jekyll.</h1>
+  				</section>
+
+  				<section>
+  				  <img src="/img/jekyllrb.png" style="border: none; box-shadow: none" /><br /> 
+  				  <a class="fragment" href="http://jekyllrb.com" target="_blank  ">http://jekyllrb.com</a>
+  				</section>
+  				
+  				<section data-background="/img/jekyll-workflow.png">
+  				</section>
+  				<section  data-background-video="/img/riot.mp4" data-background-color="#000000">
+  				</section>
+
+  				<section  data-background-video="/img/activelamp.mp4" data-background-color="#fff">
+  				  <h1 class="fragment" style="color: black ">How do you handle forms on a static site?</h1>
+  				</section>
+  				
+  				<section>
+  				  <h2>We'll get to that in a sec...</h2>
+  				</section>
+  				
+  				<section>
+  				  <h2>Why would you want to use jekyll?</h2>
+  				  <ul>
+  				    <li>The site works on any web server</li>
+  				    <li>Super Fast! There are no moving parts</li>
+  				    <li>No security updates to apply, there is no backend.</li>
+  				  </ul>
+  				</section>
+  				
+  				<section>
+  				  <h2>Questions about jekyll?</h2>
+  				</section>
+  				
 				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h2 >How do you do dynamic stuff<br /> on a static site?</h2>
+						<ul>
+						  <li class="fragment">Comments</li>
+						  <li class="fragment">Inquiry Forms</li>
+						</ul>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
+						<h2>Use a webservice</h2>
+						<img src="/img/disqus.png" style="border: none; box-shadow: none" class="fragment" />
 					</section>
 				</section>
 
+        <section>
+          <section>
+  				  <img src="/img/nodejs.png" style="border: none; box-shadow: none"\ />
+  				  <p class="fragment">A light web framework that handles taking a Request and returning a Response.</p>
+  				</section>
+
+          <section>
+  				  <img src="/img/express.png" style="border: none; box-shadow: none"\ />
+  				  <p class="fragment">an unopinionated framework for node.js.</p>
+  				</section>
+        </section>
+        
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
+					<h2>Lets make a simple node app!</h2>
 					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+$ mkdir myapp
+$ cd myapp
 
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
+$ npm init
+$ npm install express --save
 					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
 				</section>
+				
+				<section  data-background-video="/img/npm.mp4" data-background-color="#fff">
+				</section>
+				
+				<section>
+    			<h2>Lets make a simple node app!</h2>
+    			<p>app.js</p>
+    			<pre><code data-trim contenteditable>
+var express = require('express')
+
+app = express()
+
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
+
+var server = app.listen(process.env.PORT || 3000, function () {
+
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+
+});
+    			</code></pre>
+    			<p>Then start the server: </p>
+    			<pre><code data-trim contenteditable>
+$ node app.js
+					</code></pre>
+    		</section>
+        
 
 				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
+					<h1>DEMO</h1>
 					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+            Tag: 2
+            <ul>
+              <li>Show the server starting up and handling a request</li>
+            </ul>
+          </aside>
+				</section>
+				
+				<section>
+				  <h2>Form handling requires CSRF protection</h2>
+				  <aside class="notes">
+						We don't want people directly hitting our form handler, they should be using our form to get access to our form handler.
 					</aside>
 				</section>
-
+				
 				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
+				  <section>
+  				  <h1>Middleware</h1>
+  				  <aside class="notes">
+  						An Express application is essentially a series of middleware calls.
+  					</aside>
+  				</section>
 
+  				<section data-background="/img/req.png">
+  				</section>
+
+  				<section>
+  				  <h2>Think of middleware as plugins</h2>
+  				</section>
+
+          <section>
+      			<h2>Middleware examples</h2>
+      			<p>add to app.js</p>
+      			<pre><code data-trim contenteditable>
+function iDoNothingAtAll(req, res, next) { 
+  console.log("Tom was here.")
+  next() 
+}
+
+function iLikeErrorMessages(req, res, next) {
+  next("Stop the app from working.") 
+}
+
+app.use(iDoNothingAtAll)
+app.use('/error', iLikeErrorMessages)
+    			</code></pre>
+    			<aside class="notes">
+            Tag: 3
+            <ul>
+              <li>Show middleware doing nothing</li>
+              <li>Show middleware being used on a specific path</li>
+            </ul>
+          </aside>
+    		</section>
+
+    		<section>
+				  <h2>Error handling is done via middleware</h2>
+				  <p class="fragment">with an arity of 4</p>
+				  <pre class="fragment"><code data-trim contenteditable>
+function myErrorHandler(err, req, res, next) { 
+  res.send('This error was caught. ') 
+}
+
+app.use(myErrorHandler)
+      			</code></pre>
+  				</section>
+
+  				<section>
+  				  <h2>All error handling middleware should be defined after all other middleware and route calls.</h2>
+  				  <aside class="notes">
+              Tag: 4
+              <ul>
+                <li>Show error handling middleware catching error</li>
+              </ul>
+            </aside>
+  				</section>
+
+  				<section>
+  				  <h2>What can you do with Middleware?</h2>
+  				  <ul>
+  				    <li>Logging</li>
+  				    <li>Serve Static Files</li>
+  				    <li>Error Handling</li>
+  				    <li>CSRF</li>
+  				  </ul>
+  				  <aside class="notes">
+  						Middleware already exists for everything I just mentioned.
+  					</aside>
+  				</section>
+
+  				<section>
+  				  <h2>Built-in middleware</h2>
+  				  <pre class="fragment"><code data-trim contenteditable>
+app.use(express.static('public'));
+      			</code></pre>
+      			<p class="fragment">Node will now server up static assets in the public directory.</p>
+  				</section>
+				</section>
+				
 				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
+				  <h2>Lets go get a CSRF middleware</h2>
+				  <pre class="fragment"><code data-trim contenteditable>
+npm install csurf --save
+npm install cookie-parser --save
+npm install body-parser --save
+npm install jade --save
+    			</code></pre> 
 				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
+			</section>
+			
+			<section>
+				<h1>DEMO</h1>
+        <aside class="notes">
+          Tag: 5
+          <ul>
+            <li>Created the jade templates</li>
+            <li>Add in all the necessary middleware</li>
+            <li>Add in the /form route and the /process route</li>
+            <li>Demo the working CSRF token</li>
+            <li>Remove the CSRF token from template, Show error message</li>
+          </ul>
+        </aside>
+			</section>
+			
 				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
+				  <h2>Catch error specifically for CSRF</h2>
+				  <pre class="fragment"><code data-trim contenteditable>
+// csrf error handler
+app.use(function (err, req, res, next) {
+  if (err.code !== 'EBADCSRFTOKEN') return next(err)
 
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
+  // handle CSRF token errors here
+  res.status(403)
+  res.send('Your session has expired, please refresh page and submit form again.')
+})
+    			</code></pre>
+    			<aside class="notes">
+            Tag: 6
+            <ul>
+              <li>Show the error handler passing if not csrf related</li>
+            </ul>
+          </aside>
 				</section>
+			</section>
+			
+      <section>
+				<h1>Ship it! to heroku</h1>
+				<h2>Cloud based PAAS</h2>
+        <ul>
+          <li>Instant Deployment with Git push</li>
+          <li>Tons of Add-on resources (database, memcache, etc...)</li>
+          <li>Isolation - each process is completely isolated from each other</li>
+          <li>Totally free of charge for one Dyno (one process)</li>
+        </ul>
+			</section>
+			
+			<section>
+				<h1>Download the heroku toolbelt</h1>
+				<a href="https://toolbelt.heroku.com/">https://toolbelt.heroku.com/</a>
+			</section>
+			
+			<section>
+			    <p>Add a Procfile to the repo</p>
+			    <pre><code data-trim contenteditable>
+web: node app.js
+          </code></pre>
+          <p>Then push it up and watch the magic!</p>
+				  <pre><code data-trim contenteditable>
+$ heroku create
+$ git push heroku master
+
+$ heroku ps:scale web=1
+    			</code></pre>
+			</section>
+			
+			<section  data-background-video="/img/heroku.mp4" data-background-color="#fff">
+			</section>
+			
+			<section>
+				<h1>You now have a form that you can embed into your jekyll site via iframe.</h1>
+			</section>
+
 
 				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
+					<div style="width: 60%; float: left">
+					  <h1>Questions?</h1>
+					  <p>
+                Need a team of experienced developers?<br>
+
+  					</p>
+  					<h2>call 310.943.0246</h2>
+					</div>
+					<div style="width: 40%; float: left">
+					  <img src="/img/activelamp_square_logo.png" style="border: none; box-shadow: none" />
+					</div>
 				</section>
 
 			</div>
